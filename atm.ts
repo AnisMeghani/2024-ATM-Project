@@ -5,7 +5,6 @@ import inquirer from "inquirer";
 
 let balance = 20000;
 let pincode = 5556;
-let condition = 0;
 
 let pinAns = await inquirer.prompt([
   {
