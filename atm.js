@@ -20,6 +20,7 @@ if (pinAns.pin === pincode) {
             choices: ["Withdraw", "Check Balance", "Fast Cash Withdraw"],
         },
     ]);
+    console.log("Your current Balance is:", `${balance}`);
     if (operationAns.operation === "Withdraw") {
         console.log("Enter amount to withdraw");
         let amountAns = await inquirer.prompt([
@@ -33,10 +34,13 @@ if (pinAns.pin === pincode) {
             balance -= amountAns.amount;
             console.log("Your remaining balance is: " + balance);
         }
+        else {
+            console.log("Your balance is insufficient!");
+        }
     }
-    if (operationAns.operation === "Check Balance") {
-        console.log("Your balance is: " + balance);
-    }
+    // if (operationAns.operation === "Check Balance") {
+    //   // console.log("Your balance is: " + balance);
+    // }
     if (operationAns.operation === "Fast Cash Withdraw") {
         let fcw = await inquirer.prompt([
             {
